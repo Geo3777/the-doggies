@@ -35,9 +35,9 @@ export default {
       typeValue: "",
       typeStatus: false,
       displayTextArray: [
-        "See the power of smart contracts",
-        "Learn more about dogs",
-        "And watch cute puppies",
+        "Observe the power of smart contracts",
+        "Learn more about WEB3",
+        "And share our passion of blockchain",
         "Enjoy!",
       ],
       typingSpeed: 100,

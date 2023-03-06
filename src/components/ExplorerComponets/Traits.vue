@@ -5,26 +5,24 @@
         class="table table-hover bg-cinerous border border-spaceCadet text-spaceCadet text-center lead"
       >
         <tbody>
-          <tr>
-            <td>Lenght</td>
-            <td>140 cm</td>
-          </tr>
-          <tr>
-            <td>Weight</td>
-            <td>30 kg</td>
-          </tr>
-          <tr>
-            <td>Colour</td>
-            <td>Golden</td>
-          </tr>
-          <tr>
-            <td>Character</td>
-            <td>Playful</td>
+          <tr v-for="(doggie, index) in doggies" v-bind:key="index">
+            <td>{{ doggie.trait_type }}</td>
+            <td>{{ doggie.value }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    doggies() {
+      return this.$store.getters.getDoggie.doggie.attributes;
+    },
+  },
+};
+</script>
 
 <style scoped></style>

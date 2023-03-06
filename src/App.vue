@@ -7,11 +7,9 @@
 </template>
 
 <script>
-import { contract } from "./repository/contract";
 import Header from "./components/Header.vue";
 import Explorer from "./components/Explorer.vue";
 import Footer from "./components/Footer.vue";
-console.log(contract.methods);
 
 export default {
   components: {
@@ -21,15 +19,6 @@ export default {
   },
   data() {
     return {};
-  },
-  methods: {},
-  created() {
-    contract.methods
-      .tokenByIndex(1)
-      .call()
-      .then((result) => {
-        console.log(result);
-      });
   },
 };
 </script>

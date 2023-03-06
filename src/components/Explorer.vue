@@ -6,10 +6,15 @@
         <app-search></app-search>
       </div>
       <hr class="border border-1 border-cinerous" />
-      <div class="card bg-spaceCadetLight pt-2 pb-2 mb-2">
+      <div
+        v-if="isFetched"
+        class="card bg-spaceCadetLight pt-2 pb-2 mb-2"
+        id="results"
+      >
         <app-details></app-details>
         <app-traits></app-traits>
       </div>
+      <div v-if="isFetched === false" class="filler"></div>
     </div>
   </div>
 </template>
@@ -26,6 +31,11 @@ export default {
     appDetails: Details,
     appTraits: Traits,
   },
+  computed: {
+    isFetched() {
+      return this.$store.getters.getIsFetched;
+    },
+  },
 };
 </script>
 
@@ -33,5 +43,8 @@ export default {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;
+}
+.filler {
+  height: 500px;
 }
 </style>
